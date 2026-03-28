@@ -1,0 +1,28 @@
+{
+    "name": "ecommerce/coupon",
+    "description": "Coupon and discount management package for eCommerce",
+    "type": "library",
+    "license": "MIT",
+    "require": {
+        "php": "^8.3",
+        "illuminate/support": "^13.0",
+        "illuminate/database": "^13.0",
+        "illuminate/http": "^13.0",
+        "illuminate/routing": "^13.0",
+        "ecommerce/core": "*",
+        "ecommerce/user": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "ECommerce\\Coupon\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "ECommerce\\Coupon\\Providers\\CouponServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "stable"
+}

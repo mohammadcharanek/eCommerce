@@ -1,0 +1,26 @@
+{
+    "name": "ecommerce/core",
+    "description": "Shared core infrastructure for eCommerce packages",
+    "type": "library",
+    "license": "MIT",
+    "require": {
+        "php": "^8.3",
+        "illuminate/support": "^13.0",
+        "illuminate/http": "^13.0",
+        "illuminate/database": "^13.0",
+        "illuminate/contracts": "^13.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "ECommerce\\Core\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "ECommerce\\Core\\CoreServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "stable"
+}

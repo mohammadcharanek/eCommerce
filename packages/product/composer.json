@@ -1,0 +1,28 @@
+{
+    "name": "ecommerce/product",
+    "description": "Product catalog and category management package for eCommerce",
+    "type": "library",
+    "license": "MIT",
+    "require": {
+        "php": "^8.3",
+        "illuminate/support": "^13.0",
+        "illuminate/database": "^13.0",
+        "illuminate/http": "^13.0",
+        "illuminate/routing": "^13.0",
+        "ecommerce/core": "*",
+        "ecommerce/user": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "ECommerce\\Product\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "ECommerce\\Product\\Providers\\ProductServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "stable"
+}

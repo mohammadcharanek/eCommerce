@@ -1,0 +1,30 @@
+{
+    "name": "ecommerce/user",
+    "description": "User authentication and management package for eCommerce",
+    "type": "library",
+    "license": "MIT",
+    "require": {
+        "php": "^8.3",
+        "illuminate/support": "^13.0",
+        "illuminate/auth": "^13.0",
+        "illuminate/database": "^13.0",
+        "illuminate/http": "^13.0",
+        "illuminate/routing": "^13.0",
+        "ecommerce/core": "*",
+        "laravel/sanctum": "^4.3",
+        "spatie/laravel-permission": "^7.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "ECommerce\\User\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "ECommerce\\User\\Providers\\UserServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "stable"
+}

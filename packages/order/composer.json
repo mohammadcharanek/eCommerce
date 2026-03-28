@@ -1,0 +1,32 @@
+{
+    "name": "ecommerce/order",
+    "description": "Order management package for eCommerce",
+    "type": "library",
+    "license": "MIT",
+    "require": {
+        "php": "^8.3",
+        "illuminate/support": "^13.0",
+        "illuminate/database": "^13.0",
+        "illuminate/http": "^13.0",
+        "illuminate/routing": "^13.0",
+        "ecommerce/core": "*",
+        "ecommerce/user": "*",
+        "ecommerce/product": "*",
+        "ecommerce/inventory": "*",
+        "ecommerce/coupon": "*",
+        "ecommerce/cart": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "ECommerce\\Order\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "ECommerce\\Order\\Providers\\OrderServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "stable"
+}

@@ -2,7 +2,7 @@
 
 namespace App\Http\Middleware;
 
-use App\Modules\User\Models\Tenant;
+use ECommerce\User\Models\Tenant;
 use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
