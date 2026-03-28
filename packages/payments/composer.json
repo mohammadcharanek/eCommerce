@@ -1,0 +1,45 @@
+{
+    "name": "ecommerce/payments",
+    "description": "Installable Laravel package for the Payments module of the eCommerce platform",
+    "type": "library",
+    "keywords": ["laravel", "ecommerce", "payments", "package"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Mohammad Ali Charanek",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.2",
+        "laravel/framework": "^11.0",
+        "ecommerce/orders": "*"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^9.0",
+        "phpunit/phpunit": "^11.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Ecommerce\\Payments\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Ecommerce\\Payments\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Ecommerce\\Payments\\PaymentsServiceProvider"
+            ],
+            "aliases": {}
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}

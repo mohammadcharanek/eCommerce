@@ -1,0 +1,45 @@
+{
+    "name": "ecommerce/orders",
+    "description": "Installable Laravel package for the Orders module of the eCommerce platform",
+    "type": "library",
+    "keywords": ["laravel", "ecommerce", "orders", "package"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Mohammad Ali Charanek",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.2",
+        "laravel/framework": "^11.0",
+        "ecommerce/products": "*"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^9.0",
+        "phpunit/phpunit": "^11.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Ecommerce\\Orders\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Ecommerce\\Orders\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Ecommerce\\Orders\\OrdersServiceProvider"
+            ],
+            "aliases": {}
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}

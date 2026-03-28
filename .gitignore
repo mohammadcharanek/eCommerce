@@ -28,3 +28,8 @@ Homestead.json
 .env.production
 .phpactor.json
 auth.json
+
+# Per-package vendor directories (not committed)
+/packages/products/vendor
+/packages/orders/vendor
+/packages/payments/vendor
