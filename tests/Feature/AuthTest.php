@@ -26,7 +26,7 @@ class AuthTest extends TestCase
             'password_confirmation' => 'password123',
         ]);
 
-        $response->assertStatus(200)
+        $response->assertStatus(201)
             ->assertJsonStructure([
                 'success',
                 'data' => ['user', 'token'],

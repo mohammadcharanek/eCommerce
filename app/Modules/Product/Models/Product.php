@@ -5,6 +5,7 @@ namespace App\Modules\Product\Models;
 use App\Modules\Inventory\Models\Inventory;
 use App\Modules\User\Models\Tenant;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
@@ -13,7 +14,12 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Product extends Model
 {
-    use SoftDeletes;
+    use HasFactory, SoftDeletes;
+
+    protected static function newFactory(): \Database\Factories\ProductFactory
+    {
+        return \Database\Factories\ProductFactory::new();
+    }
 
     protected $fillable = [
         'tenant_id', 'category_id', 'name', 'slug', 'description',

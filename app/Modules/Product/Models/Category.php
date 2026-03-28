@@ -3,6 +3,7 @@
 namespace App\Modules\Product\Models;
 
 use App\Modules\User\Models\Tenant;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
@@ -10,6 +11,12 @@ use Illuminate\Database\Eloquent\Builder;
 
 class Category extends Model
 {
+    use HasFactory;
+
+    protected static function newFactory(): \Database\Factories\CategoryFactory
+    {
+        return \Database\Factories\CategoryFactory::new();
+    }
     protected $fillable = [
         'tenant_id', 'parent_id', 'name', 'slug', 'description',
         'image', 'is_active', 'sort_order',

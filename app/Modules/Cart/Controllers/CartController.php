@@ -29,7 +29,7 @@ class CartController extends Controller
         $cart = $this->cartService->getCart(
             tenantId: (int) $request->header('X-Tenant-ID', 1),
             userId: $request->user()?->id,
-            sessionId: $request->session()->getId(),
+            sessionId: $request->header('X-Session-ID', null),
         );
         return $this->successResponse(new CartResource($cart->load(['items.product', 'coupon'])));
     }
@@ -55,7 +55,7 @@ class CartController extends Controller
         $cart = $this->cartService->getCart(
             tenantId: (int) $request->header('X-Tenant-ID', 1),
             userId: $request->user()?->id,
-            sessionId: $request->session()->getId(),
+            sessionId: $request->header('X-Session-ID', null),
         );
         $this->cartService->addItem($cart, $request->product_id, $request->quantity, $request->variant_id);
         return $this->successResponse(new CartResource($cart->fresh(['items.product', 'coupon'])), 'Item added to cart');
@@ -79,7 +79,7 @@ class CartController extends Controller
         $cart = $this->cartService->getCart(
             tenantId: (int) $request->header('X-Tenant-ID', 1),
             userId: $request->user()?->id,
-            sessionId: $request->session()->getId(),
+            sessionId: $request->header('X-Session-ID', null),
         );
         $this->cartService->updateQuantity($cart, $id, $request->quantity);
         return $this->successResponse(new CartResource($cart->fresh(['items.product', 'coupon'])), 'Cart item updated');
@@ -99,7 +99,7 @@ class CartController extends Controller
         $cart = $this->cartService->getCart(
             tenantId: (int) $request->header('X-Tenant-ID', 1),
             userId: $request->user()?->id,
-            sessionId: $request->session()->getId(),
+            sessionId: $request->header('X-Session-ID', null),
         );
         $this->cartService->removeItem($cart, $id);
         return $this->successResponse(new CartResource($cart->fresh(['items.product', 'coupon'])), 'Item removed from cart');
@@ -124,7 +124,7 @@ class CartController extends Controller
             $cart = $this->cartService->getCart(
                 tenantId: (int) $request->header('X-Tenant-ID', 1),
                 userId: $request->user()?->id,
-                sessionId: $request->session()->getId(),
+                sessionId: $request->header('X-Session-ID', null),
             );
             $cart = $this->cartService->applyCoupon($cart, $request->code);
             return $this->successResponse(new CartResource($cart), 'Coupon applied successfully');

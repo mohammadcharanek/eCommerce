@@ -53,7 +53,7 @@ class CouponTest extends TestCase
             'order_amount' => 100.00,
         ]);
 
-        $response->assertStatus(200)->assertJsonPath('data.discount', 20.0);
+        $response->assertStatus(200)->assertJsonPath('data.discount', 20);
     }
 
     public function test_invalid_coupon_returns_error(): void

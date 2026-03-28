@@ -4,12 +4,19 @@ namespace App\Modules\Coupon\Models;
 
 use App\Modules\User\Models\Tenant;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Coupon extends Model
 {
+    use HasFactory;
+
+    protected static function newFactory(): \Database\Factories\CouponFactory
+    {
+        return \Database\Factories\CouponFactory::new();
+    }
     public const TYPE_PERCENTAGE = 'percentage';
     public const TYPE_FIXED      = 'fixed';
 

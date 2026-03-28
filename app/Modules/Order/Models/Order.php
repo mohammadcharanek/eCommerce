@@ -6,6 +6,7 @@ use App\Modules\Payment\Models\Payment;
 use App\Modules\User\Models\Tenant;
 use App\Modules\User\Models\User;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
@@ -13,7 +14,12 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Order extends Model
 {
-    use SoftDeletes;
+    use HasFactory, SoftDeletes;
+
+    protected static function newFactory(): \Database\Factories\OrderFactory
+    {
+        return \Database\Factories\OrderFactory::new();
+    }
 
     public const STATUS_PENDING    = 'pending';
     public const STATUS_PROCESSING = 'processing';
